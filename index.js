@@ -6,13 +6,13 @@ function map(src, cb) {
     return value;
   }
 
-  function reduce(src, cb, starting){
-    let r = (!!starting) ? starting : src[0]
-    let i = (!!starting) ? 0 : 1
+  function reduce(src, cb, start){
+    let total = (!!start) ? start : src[0]
+    let i = (!!start) ? 0 : 1
   
     for (; i < src.length; i++) {
-      r = cb(src[i], r)
+      total = cb(src[i], total)
     }
   
-    return r;
+    return total;
   }
